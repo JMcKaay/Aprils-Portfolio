@@ -1,6 +1,25 @@
 @import 'layout/footer';
 @import 'layout/header';
 
+// Pallets and Project Syles
+
+.first-color { 
+	background: #8ef6e4; 
+}
+	
+.second-color { 
+	background: #9896f1; 
+}
+
+.third-color { 
+	background: #d59bf6; 
+}
+
+.fourth-color { 
+	background: #edb1f1; 
+}
+
+
 // Reset default styles
 * {
   margin: 0;
@@ -23,7 +42,7 @@ body {
     "nav main"
     "footer footer";
   border: 3px solid red;
-  background-color: black;
+  background-color: #9896f1;
   color: #333;
 }
 
@@ -39,6 +58,11 @@ h3 { font-size: 1.75em; }
 h4 { font-size: 1.5em; }
 h5 { font-size: 1.25em; }
 h6 { font-size: 1em; }
+
+.home-header {
+  margin-top: 10px;
+  font-size: 1fr;
+}
 
 header, nav, main, footer {
   border: 3px solid red;
@@ -69,15 +93,29 @@ footer { grid-area: footer; }
   transition: all 0.5s ease;
 }
 
-.square1 { background-color: rgba(255, 0, 0, 0.7); }
-.square2 { background-color: rgba(0, 0, 255, 0.7); }
-.square3 { background-color: rgba(0, 255, 0, 0.7); }
+.square1 { 
+  background-color: rgba(255, 0, 0, 0.7);
+  border: 2px solid #edb1f1;
+  border-radius: 28px;
+   
+}
+.square2 { 
+  background-color: rgba(0, 0, 255, 0.7);
+  border: 2px solid #edb1f1;
+  border-radius: 28px; 
+}
+.square3 { 
+  background-color: rgba(0, 255, 0, 0.7);
+  border: 2px solid #edb1f1;
+  border-radius: 28px;
+}
 
 .hero {
   top: 50%;
   left: 65%;
   transform: translate(-50%, -50%) scale(1);
   z-index: 3;
+  box-shadow: 5px 5px 15px 9px rgba(0, 0, 0, 0.3);
 }
 
 .left-top {
@@ -85,6 +123,7 @@ footer { grid-area: footer; }
   left: 15%;
   transform: translate(0, 0) scale(1);
   z-index: 2;
+  box-shadow: -6px 6px 15px 9px rgba(0, 0, 0, 0.3);
 }
 
 .left-bottom {
@@ -92,6 +131,7 @@ footer { grid-area: footer; }
   left: 15%;
   transform: translate(0, 0) scale(1);
   z-index: 1;
+  box-shadow: -6px 6px 15px 9px rgba(0, 0, 0, 0.3);
 }
 
 @media ( max-width: 1000px){
@@ -106,6 +146,11 @@ footer { grid-area: footer; }
     "header header"
     "main main"
     "footer footer";
+  }
+
+  .home-header {
+    margin-top: 10px;
+    font-size: 1fr;
   }
 
   .main {
