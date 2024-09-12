@@ -1,0 +1,148 @@
+@import 'layout/footer';
+@import 'layout/header';
+
+// Reset default styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Set base font styles
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: grid;
+  overflow-y: auto;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer";
+  border: 3px solid red;
+  background-color: black;
+  color: #333;
+}
+
+// Heading styles
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+
+header, nav, main, footer {
+  border: 3px solid red;
+}
+
+header { grid-area: header; }
+nav { grid-area: nav; }
+main { 
+  grid-area: main;
+  position: relative;
+  overflow: visible;
+}
+footer { grid-area: footer; }
+
+.square {
+  position: absolute;
+  aspect-ratio: 1 / 1;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  overflow: hidden;
+  border-radius: 10%;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.square1 { background-color: rgba(255, 0, 0, 0.7); }
+.square2 { background-color: rgba(0, 0, 255, 0.7); }
+.square3 { background-color: rgba(0, 255, 0, 0.7); }
+
+.hero {
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 3;
+}
+
+.left-top {
+  top: 10%;
+  left: 15%;
+  transform: translate(0, 0) scale(1);
+  z-index: 2;
+}
+
+.left-bottom {
+  top: 55%;
+  left: 15%;
+  transform: translate(0, 0) scale(1);
+  z-index: 1;
+}
+
+@media ( max-width: 1000px){
+  .square {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media ( max-width: 728px){
+  body{
+    grid-template-areas:   
+    "header header"
+    "main main"
+    "footer footer";
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    grid-column: 1 / -1;
+  }
+
+    .square {
+    position: static;
+    width: 80vw;
+    height: 80vw;
+    max-width: 300px;
+    max-height: 300px;
+    aspect-ratio: 1 / 1;
+    transform: none !important;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+
+  .hero, .left-top, .left-bottom {
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+
+  .hero {
+    order: -1;
+    transform: scale(1.1) !important;
+  }
+
+  nav {
+    display: none;
+  }
+
+}
