@@ -1,2 +1,2 @@
-
+.home-header{margin-top:10px;margin-left:100px;font-size:clamp(16px, 5vw, 100px);font-family:"Bad Script", cursive}@media (max-width: 728px){#home-header{text-align:center;max-width:100%;width:600px;height:auto;display:block;margin:0 auto}.home-header img{width:100%;height:auto;max-width:100%;display:block}.home-header{font-size:clamp(30px, 5vw, 100px);margin:10px auto;text-align:center}}
 /*# sourceMappingURL=header.css.map */
