@@ -46,9 +46,9 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  min-height: 100vh;
+  min-height: 190vh;
   display: grid;
-  overflow-y: auto;
+  overflow-y: scroll;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: 
@@ -159,6 +159,7 @@ footer { grid-area: footer; }
   background-color: #8EC5FC;
   background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
   border-radius: 28px; 
+  position: relative;
 }
 .square3 { 
   display: grid;
@@ -198,13 +199,54 @@ footer { grid-area: footer; }
   box-shadow: -6px 6px 15px 9px rgba(0, 0, 0, 0.3);
 }
 
+.square .carousel,
+.square .carousel-inner,
+.square .carousel-item {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.square .carousel-item {
+  height: 100%;
+}
 
+.square .carousel-item img,
+.square .carousel-item video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 24px;
+}
 
-  .contentgif {
-      mix-blend-mode: screen;
-    
+.carousel-control-prev,
+.carousel-control-next {
+  width: 10%;
+  z-index: 5;
+}
+
+.contentgif {
+  mix-blend-mode: screen;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   }
+
 
 
   .modal-content {
@@ -599,6 +641,17 @@ footer { grid-area: footer; }
 
 
   @media ( max-width: 1000px){
+
+
+    body{
+      min-height: 120vh;
+    }
+    
+    nav {
+      display: none;
+    }
+  
+
     .square {
       aspect-ratio: 1 / 1;
     }
@@ -610,6 +663,7 @@ footer { grid-area: footer; }
       "header header"
       "main main"
       "footer footer";
+      min-height: 120vh;
     }
   
     .home-header {
